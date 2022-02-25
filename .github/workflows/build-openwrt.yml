@@ -66,13 +66,15 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: |
+        cd openwrt
+        scripts/feeds update -a -f
 
     - name: Install feeds
       run: |
         cd openwrt
-        ./scripts/feeds install bc lm-sensors antfs-mount luci-app-samba wsdd2 libpam ddns-scripts wget-ssl luci-base luci luci-proto-ipv6 liblzma libnetsnmp maccalc libzstd libcurl libtins libyaml-cpp libtirpc
-        ./scripts/feeds install -a
+        ./scripts/feeds install bc lm-sensors antfs-mount libpam luci-proto-ipv6 liblzma libnetsnmp
+        ./scripts/feeds install -a -f
 
     - name: Load custom configuration
       run: |
