@@ -43,5 +43,8 @@ rm -rf package/feeds/luci/luci-app-noddos
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/other/luci-app-openclash
 
-rm -rf feeds/packages/net/nginx-util/files/nginx.config
-mv ${GITHUB_WORKSPACE}/nginx.config feeds/packages/net/nginx-util/files/nginx.config
+#rm -rf feeds/packages/net/nginx-util/files/nginx.config
+#mv ${GITHUB_WORKSPACE}/nginx.config feeds/packages/net/nginx-util/files/nginx.config
+sed -i 's/true/false/g' feeds/packages/net/nginx-util/files/nginx.config
+mkdir -p package/base-files/files/etc/nginx
+cp -rf ${GITHUB_WORKSPACE}/nginx.conf package/base-files/files/etc/nginx/
