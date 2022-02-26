@@ -83,6 +83,8 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        chmod +x $GITHUB_WORKSPACE/get_clash_core.sh
+        $GITHUB_WORKSPACE/get_clash_core.sh
 
     - name: Download package
       id: package

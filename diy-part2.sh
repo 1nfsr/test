@@ -48,3 +48,5 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/o
 sed -i 's/true/false/g' feeds/packages/net/nginx-util/files/nginx.config
 mkdir -p package/base-files/files/etc/nginx
 cp -rf ${GITHUB_WORKSPACE}/nginx.conf package/base-files/files/etc/nginx/
+rm -rf package/network/services/dnsmasq/files/dhcp.conf
+cp -rf ${GITHUB_WORKSPACE}/dhcp.conf package/network/services/dnsmasq/files/
