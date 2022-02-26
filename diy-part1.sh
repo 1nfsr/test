@@ -28,3 +28,4 @@ rm -rf package/lean/mt
 rm -rf package/firmware/quantenna
 rm -rf package/network/services/noddos
 
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/other/luci-app-openclash
