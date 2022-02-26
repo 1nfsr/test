@@ -17,8 +17,8 @@ env:
   CONFIG_FILE: config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: true
-  UPLOAD_FIRMWARE: true
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: true
   UPLOAD_RELEASE: true
@@ -68,13 +68,13 @@ jobs:
     - name: Update feeds
       run: |
         cd openwrt
-        scripts/feeds update -a -f
+        ./scripts/feeds update -a
+
 
     - name: Install feeds
       run: |
         cd openwrt
-        ./scripts/feeds install bc lm-sensors antfs-mount libpam luci-proto-ipv6 liblzma libnetsnmp
-        ./scripts/feeds install -a -f
+        ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
