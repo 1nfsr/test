@@ -50,3 +50,8 @@ mkdir -p package/base-files/files/etc/nginx
 cp -rf ${GITHUB_WORKSPACE}/nginx.conf package/base-files/files/etc/nginx/
 rm -rf package/network/services/dnsmasq/files/dhcp.conf
 cp -rf ${GITHUB_WORKSPACE}/dhcp.conf package/network/services/dnsmasq/files/
+
+
+svn co https://github.com/kongfl888/luci-app-adguardhome/trunk/ package/other/luci-app-adguardhome
+svn co https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns package/other/luci-app-mosdns
+svn co https://github.com/QiuSimons/openwrt-mos/trunk/mosdns package/other/other/mosdns
